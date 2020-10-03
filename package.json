@@ -12,9 +12,11 @@
     "start:server": "node server/server.js"
   },
   "dependencies": {
+    "@types/node-fetch": "^2.5.7",
     "faker": "^4.1.0",
     "fastify": "^2.14.1",
     "fastify-cors": "^3.0.3",
+    "node-fetch": "^2.6.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1",

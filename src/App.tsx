@@ -1,23 +1,21 @@
-import React from 'react';
-import styled from 'styled-components';
+import React, { FunctionComponent } from "react";
+import { Layout, HeaderArea, MainArea } from "./styled/grid";
+import GlobalHeader from "./components/GlobalHeader";
+import UsersView from "./components/UsersPage";
 
-const API_URL = 'http://localhost:8099'
+const API_URL = "http://localhost:8099";
 
-function App() {
+const App: FunctionComponent = () => {
   return (
-    <div className="App">
-      <h1>Planned Test</h1>
-      <div>
-        <button type="button">Retrieve Users</button>
-      </div>
-      <div>
-        <h2>Users</h2>
-        min: <input name="minAge" value="0" type="number" />
-        max: <input name="maxAge" value="100" type="number" />
-        <button type="button">Filter by age</button>
-      </div>
-    </div>
+    <Layout className="App">
+      <HeaderArea>
+        <GlobalHeader />
+      </HeaderArea>
+      <MainArea>
+        <UsersView endpoint={API_URL} />
+      </MainArea>
+    </Layout>
   );
-}
+};
 
 export default App;

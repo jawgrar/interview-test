@@ -1,13 +1,11 @@
 import styled from "styled-components";
 
-
-
 export const Layout = styled.div`
   display: grid;
   grid-template-areas:
     "header"
     "main";
-  grid-gap: 2em;
+  grid-gap: 0;
 `;
 
 export const SubLayout = styled.div`
@@ -15,7 +13,7 @@ export const SubLayout = styled.div`
   grid-template-areas:
     "header header header"
     "right main main";
-  grid-gap: 2em;
+  grid-gap: 0;
 `
 
 export const HeaderArea = styled.div`

@@ -1,4 +1,7 @@
 import React, { FC, useState } from "react";
+import { Button, TextField } from "@material-ui/core";
+import { ShadowContainer } from "../styled/common";
+import styled from "styled-components";
 
 interface Props {
   onRetreive: (min: number, max: number) => void;
@@ -25,16 +28,43 @@ const Filter: FC<Props> = ({ onRetreive }) => {
   };
 
   return (
-    <div>
-      value min:
-      <input name="minAge" value={min} onChange={updateMin} type="number" />
-      max:
-      <input name="maxAge" value={max} onChange={updateMax} type="number" />
-      <button type="button" onClick={submit}>
+    <Container>
+      <TextField
+        style={{ flex: 1, margin: 8 }}
+        label="Min"
+        variant="outlined"
+        name="minAge"
+        value={min}
+        onChange={updateMin}
+        type="number"
+      />
+      <TextField
+        style={{ flex: 1, margin: 8 }}
+        label="Max"
+        variant="outlined"
+        name="maxAge"
+        value={max}
+        onChange={updateMax}
+        type="number"
+      />
+      <Button
+        style={{ flex: 1, margin: 8 }}
+        variant="contained"
+        color="primary"
+        disableElevation
+        onClick={submit}
+      >
         Retrieve Users
-      </button>
-    </div>
+      </Button>
+    </Container>
   );
 };
+
+const Container = styled(ShadowContainer)`
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  width: 200px;
+`;
 
 export default Filter;
